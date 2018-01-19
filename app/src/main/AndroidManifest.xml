@@ -6,27 +6,47 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.MainActivity">
+        <activity
+            android:name=".views.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".views.CharitiesResultsActivity"
-            android:launchMode="singleTop"/>
-
-        <activity android:name=".views.CharityDetails"
+        <activity android:name=".views.MainActivity" />
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".views.OnboardingActivity" />
+        <activity
+            android:name=".views.CharitiesResultsActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/RVTheme" />
+        <activity
+            android:name=".views.CharityDetails"
             android:parentActivityName=".views.CharitiesResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".views.CharitiesResultsActivity"/>
+                android:value=".views.CharitiesResultsActivity" />
         </activity>
+        <activity
+            android:name=".views.ListWishesActivity"
+            android:label="@string/txt_wishes"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName=".views.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.ListWishesActivity" />
+        </activity>
+        <activity
+            android:name=".views.InfoActivity"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppTheme.NoActionBar">
 
+        </activity>
     </application>
 
 </manifest>

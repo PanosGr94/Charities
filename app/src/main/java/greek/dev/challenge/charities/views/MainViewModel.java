@@ -1,13 +1,12 @@
 package greek.dev.challenge.charities.views;
 
 
-import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import greek.dev.challenge.charities.model.Charity;
 
@@ -30,5 +29,11 @@ public class MainViewModel extends ViewModel {
         charityListTemp.add(charity);
 
         charitiesList.setValue(charityListTemp);
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        Log.v("viewmodel","cleard");
     }
 }
